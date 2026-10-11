@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MessageFlow AI — Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <path d="M3 6.5h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" />
+            <path d="M7.5 12h13.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".75" />
+            <path d="M3 17.5h13" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".5" />
+          </svg>
+        </span>
+        <div>
+          <strong>MessageFlow <em>AI</em></strong>
+          <span>Messaging Manager</span>
+        </div>
+      </div>
+      <nav id="nav" class="nav"></nav>
+      <div class="side-foot">
+        <div class="sandbox-note">
+          <strong>Safety first</strong>
+          <p>Real sends happen only through official integrations you connect. Nothing is automated on WhatsApp/Instagram.</p>
+        </div>
+        <span class="ver">v1.1.0 · Manifest V3</span>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div class="page-head">
+          <h1 id="pageTitle">Overview</h1>
+          <p id="pageSub">Live activity across every integration</p>
+        </div>
+        <div class="clock-pill"><span class="live-dot"></span><span id="clock" class="tnum">--:--</span><span id="clockTz" class="clock-tz"></span></div>
+        <button class="btn btn-danger" data-act="stopall-ask">■ Stop All</button>
+      </header>
+      <main id="view" class="view"></main>
+    </div>
+
+    <div id="confirmBar" class="confirm-bar hidden"></div>
+    <div id="modalRoot"></div>
+    <div id="toastRoot" class="toast-root"></div>
+    <input type="file" id="importFile" accept="application/json" hidden />
+
+    <script src="dashboard.js" type="module"></script>
+  </body>
+</html>

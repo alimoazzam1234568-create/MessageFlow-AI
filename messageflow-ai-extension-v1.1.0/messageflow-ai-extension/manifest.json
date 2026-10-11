@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "MessageFlow AI — Universal Messaging Manager",
+  "version": "1.1.0",
+  "description": "Organize, schedule and manage multi-section message campaigns. Mock sandbox by default; real sends only through official Discord webhooks and the Telegram Bot API you connect yourself.",
+  "permissions": ["storage", "alarms", "tabs"],
+  "host_permissions": [
+    "https://discord.com/api/*",
+    "https://canary.discord.com/api/*",
+    "https://ptb.discord.com/api/*",
+    "https://discordapp.com/api/*",
+    "https://api.telegram.org/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "MessageFlow AI"
+  },
+  "options_page": "dashboard/dashboard.html"
+}

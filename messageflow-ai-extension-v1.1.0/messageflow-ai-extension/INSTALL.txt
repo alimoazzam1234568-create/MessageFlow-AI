@@ -1,0 +1,42 @@
+MessageFlow AI — Chrome Extension (Manifest V3)
+=====================================================
+
+INSTALL (2 minutes)
+-------------------
+1. Open  chrome://extensions  in Chrome, Edge, Brave or Arc.
+2. Enable  "Developer mode"  (top-right toggle).
+3. Click  "Load unpacked"  and select THIS extracted folder
+   (the folder that contains manifest.json).
+4. Optional: pin "MessageFlow AI" to your toolbar.
+
+USE
+---
+- Click the toolbar icon -> "Open full dashboard" for the complete app:
+  Overview, Campaigns, Campaign Builder, Message Sections,
+  Platforms & Integrations, Schedule, Activity Logs, Settings.
+- Platforms -> Discord : paste your Incoming Webhook URL
+  (channel settings -> Integrations -> Webhooks -> New Webhook).
+- Platforms -> Telegram: paste your @BotFather token + chat ID.
+- "Scan" detects the chat/thread from your open messaging tabs
+  (Discord /channels/..., web.telegram.org, web.whatsapp.com,
+  Instagram DM threads) and offers it as a campaign destination.
+- Popup -> "Scan current chat & compose" scans the chat tab you are
+  looking at and opens the builder pre-filled.
+
+SAFETY
+------
+- Test mode and the mock sandbox NEVER deliver real messages.
+- Live sends happen ONLY through the official Discord webhook /
+  Telegram Bot API credentials you paste yourself.
+- Credentials are stored locally (chrome.storage), masked in the UI,
+  never logged, and sent nowhere except the official platform endpoint.
+- Scheduling uses chrome.alarms: best-effort (~30s), never exact.
+- WhatsApp / Instagram: assisted copy mode only (Meta approval required).
+
+PERMISSIONS
+-----------
+storage            campaigns, logs, settings, credentials
+alarms             background scheduling while the dashboard is closed
+tabs               thread scanner (read open tab URLs, nothing else)
+discord.com/api    deliver to YOUR webhook
+api.telegram.org   deliver via YOUR bot
